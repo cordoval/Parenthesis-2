@@ -8,3 +8,8 @@ Scenario: Validates opening and close parenthesis
   Given my input string is "()"
   When I run parse
   Then I should get: true
+
+Scenario: Validates (())
+  Given my input string is "(()"
+  When I run parse
+  Then I should get: false
