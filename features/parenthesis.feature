@@ -9,7 +9,13 @@ Scenario: Validates opening and close parenthesis
   When I run parse
   Then I should get: true
 
-Scenario: Validates (())
+Scenario: Validates (()
   Given my input string is "(()"
   When I run parse
   Then I should get: false
+
+Scenario: Validates ([])
+  Given my input string is "([])"
+  When I run parse
+  Then I should get: true
+
