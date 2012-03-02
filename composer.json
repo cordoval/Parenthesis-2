@@ -2,7 +2,9 @@
     "require": {
         "behat/behat": ">=2.2.2"
     },
-
+    "autoload": {
+            "psr-0": { "PHPPeru\\": "lib/" }
+    },
     "config": {
         "bin-dir": "bin/"
     }

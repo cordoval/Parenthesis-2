@@ -11,8 +11,8 @@ use PHPPeru\Parenthesis\Parenthesis;
 //
 // Require 3rd-party libraries here:
 //
-//   require_once 'PHPUnit/Autoload.php';
-//   require_once 'PHPUnit/Framework/Assert/Functions.php';
+   require_once 'PHPUnit/Autoload.php';
+   require_once 'PHPUnit/Framework/Assert/Functions.php';
 //
 
 /**
@@ -68,7 +68,7 @@ class FeatureContext extends BehatContext
      */
     public function iShouldGetTrue($outputValue)
     {
-        throw new PendingException();
+        assertEquals($outputValue == 'true', $this->isValid);
     }
 
 
