@@ -4,18 +4,18 @@ Feature: parenthesis validator
   As a text user
   I need to be able to validate if it follows the syntax
 
-Scenario: Validates opening and close parenthesis
-  Given my input string is "()"
+Scenario Outline: Validates opening and close parenthesis
+  Given my input string is "<input string>"
   When I run parse
-  Then I should get: true
+  Then I should get: <true or false>
 
-Scenario: Validates (()
-  Given my input string is "(()"
-  When I run parse
-  Then I should get: false
-
-Scenario: Validates ([])
-  Given my input string is "([])"
-  When I run parse
-  Then I should get: true
+  Examples:
+    | input string | true or false |
+    | ()           | true          |
+    | (()          | false         |
+    | (())         | true          |
+    | ([])         | true          |
+    | ([][])       | true          |
+    | ([]])        | false         |
+    | ([][])       | true          |
 
